@@ -10,16 +10,14 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Build
         run: |
-            mkdir dist
-            cp -R src/* dist
+          mkdir dist
+          cp -R src/* dist
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN}}
           publish_dir: ./dist
-        
-      
